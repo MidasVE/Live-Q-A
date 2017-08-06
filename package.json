@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MidasVE/Live-Q-A/issues"
   },
-  "homepage": "https://github.com/MidasVE/Live-Q-A#readme"
+  "homepage": "https://github.com/MidasVE/Live-Q-A#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
 }
