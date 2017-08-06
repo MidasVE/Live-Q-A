@@ -1,0 +1,19 @@
+{
+  "name": "live-q-a",
+  "version": "1.0.0",
+  "description": "A live q&a app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MidasVE/Live-Q-A.git"
+  },
+  "author": "Midas Van Espen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MidasVE/Live-Q-A/issues"
+  },
+  "homepage": "https://github.com/MidasVE/Live-Q-A#readme"
+}
