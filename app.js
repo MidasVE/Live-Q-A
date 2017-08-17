@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 const pug = require('pug');
 
-const compiledFunction = pug.compileFile('views/login.pug');
+const login = pug.compileFile('views/login.pug');
 
-app.get('/', (req, res) => {
-    res.send(compiledFunction({
+app.get('/login', (req, res) => {
+    res.send(login({
     title: 'Login'
 }));
 })
