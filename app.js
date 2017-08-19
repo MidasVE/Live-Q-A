@@ -6,13 +6,19 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
-const login = pug.compileFile('views/login.pug');
+const db = require('./controllers/db');
 
-app.get('/login', (req, res) => {
-    res.send(login({
-    title: 'Login'
-}));
-})
+mongoose.connect(db.url);
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
+app.use(bodyParser.json());
+app.use(session({ secret: 'liveqa' }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 app.listen(3000, () => {
     console.log('Example listening on port 3000!')
