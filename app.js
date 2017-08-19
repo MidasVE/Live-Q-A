@@ -24,6 +24,6 @@ app.use(cookieParser());
 
 app.use('/', require('./routes/index'));
 
-app.listen(3000, () = > {
+app.listen(3000, function() {
     console.log('Example listening on port 3000!')
 })
