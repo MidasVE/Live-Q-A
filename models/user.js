@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const user = mongoose.Schema({
     facebookId : String,
+    token : String,
     name : String,
     location : String,
     image : String,
