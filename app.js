@@ -10,6 +10,8 @@ const app = express();
 
 const db = require('./controllers/db');
 
+require('./config/passport')(passport);
+
 mongoose.connect(db.url);
 
 app.set('views', path.join(__dirname, 'views'));
@@ -24,6 +26,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
 app.use('/', require('./routes/index'));
+
+app.get('/login/facebook',
+    passport.authenticate('facebook', { scope : 'email' })
+);
 
 app.listen(3000, function() {
     console.log('Example listening on port 3000!')
