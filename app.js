@@ -31,6 +31,12 @@ app.get('/login/facebook',
     passport.authenticate('facebook', { scope : 'email' })
 );
 
+app.get('/auth/facebook/callback',
+    passport.authenticate('facebook', { failureRedirect: '/' }),
+    function(req, res) {
+        res.redirect('/');
+    });
+
 app.listen(3000, function() {
     console.log('Example listening on port 3000!')
 })
