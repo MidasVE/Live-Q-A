@@ -26,6 +26,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
 app.use('/', require('./routes/index'));
+app.use('/', require('./routes/home'));
 
 app.get('/login/facebook',
     passport.authenticate('facebook', { scope : 'email' })
@@ -34,7 +35,7 @@ app.get('/login/facebook',
 app.get('/auth/facebook/callback',
     passport.authenticate('facebook', { failureRedirect: '/' }),
     function(req, res) {
-        res.redirect('/');
+        res.redirect('/home');
     });
 
 app.listen(3000, function() {
