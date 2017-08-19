@@ -6,6 +6,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
+const app = express();
+
 const db = require('./controllers/db');
 
 mongoose.connect(db.url);
@@ -19,6 +21,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use('/', require('./routes/index'));
 
 app.listen(3000, () => {
     console.log('Example listening on port 3000!')
