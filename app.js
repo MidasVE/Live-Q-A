@@ -1,6 +1,10 @@
 const express = require('express');
-const app = express();
-const pug = require('pug');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const passport   = require('passport');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 const login = pug.compileFile('views/login.pug');
 
