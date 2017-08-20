@@ -1,4 +1,9 @@
 extends layout
 block content
     h1 Welcome #{user}
-    a(href='/logout') logout
+    div
+        a(href='/logout') logout
+    div
+        a(href='/discussion/create') create a new discussion
+    div
+        a(href='/discussion/' + id) discussion #{id}
