@@ -1,0 +1,12 @@
+extends layout
+block content
+    h1 Create new discussion
+    form(action='', method='post')
+    div
+        label(for='title') Title
+        input#title
+    div
+        label(for='desc') Description
+        input#desc
+    div
+        input(type='submit', value='Create')

@@ -4,6 +4,7 @@ const discussion = mongoose.Schema({
     id : String,
     name : String,
     location : String,
+    description: String,
     moderator : String
 });
 
